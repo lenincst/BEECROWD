@@ -1,22 +1,19 @@
 <?php
-$y = readline();
-$array = explode(" ", $y);
-$y1 = $array[0];
-$y2 = $array[1];
-
 $x = readline();
 $array2 = explode(" ", $x);
 $x1 = $array2[0];
-$x2 = $array2[1];
+$y1 = $array2[1];
 
-$num1 = $y2 - $y1;
-$num2 = $x2 - $x1;
+$y = readline();
+$array = explode(" ", $y);
+$x2 = $array[0];
+$y2 = $array[1];
 
-$resultado = sqrt(
-    ((pow($num1, 2))+
-    (pow($num2, 2)))
-);
+$num1 = pow(($x2 - $x1),2);
+$num2 = pow(($y2 - $y1),2);
 
-    echo $resultado;
+$distancia = sqrt($num1+$num2);
+
+echo sprintf("%.4f", $distancia), PHP_EOL;
 
 ?>
