@@ -1,26 +1,29 @@
 <?php
 $valor = (float)readline();
+$valor = round($valor * 100);
 
 $notas = [
-    100.00, 50.00, 20.00, 10.00, 5.00, 2.00
+    10000, 5000, 2000, 1000, 500, 200
 ];
+echo "NOTAS:\n";
 
 foreach ($notas as $n){
     $a = intdiv($valor, $n);
     $valor = ($valor % $n);
 
-    echo "notas: $a",PHP_EOL;
+    echo $a ." nota(s) de R$ ".sprintf("%.2f",$n /100),PHP_EOL;
 }
 
+echo "MOEDAS:\n";
 $moedas = [
-    1 , 0.50, 0.25, 0.10, 0.05, 0.01
+    100 , 50, 25, 10, 5, 1
 ];
+
 foreach ($moedas as $n){
-    $b = ($valor / $n);
-    $valor = ($b % $n);
+    $b = intdiv($valor, $n);
+    $valor = ($valor % $n);
 
-    echo "moedas: ". sprintf("%.2f",$b),PHP_EOL;
+    echo $b." moeda(s) de R$ ".sprintf("%.2f",$n/100),PHP_EOL;
 }
-
 
 ?>
