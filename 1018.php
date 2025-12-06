@@ -7,7 +7,7 @@ foreach($array as $n){
     $n1 = intdiv($valor, $n);
     $valor = $valor % $n;
 
-    echo "$n1 notas(s) de R$ ".number_format($n, 2,",","."),PHP_EOL;
+    echo "$n1 nota(s) de R$ ".number_format($n, 2,",","."),PHP_EOL;
 }
 
 ?>
